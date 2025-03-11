@@ -20,7 +20,8 @@ export default function NotesList({ notes, onSelect, onDelete, onAdd }: NotesLis
           style={{ background: note.color }}
           onClick={() => onSelect(note.id)}
         >
-          {note.title || "Untitled"}
+          <div className="note-item-title">{note.title || "Untitled"}</div>
+          <div className="note-item-content">{note.content || "No content available"}</div>
           <button onClick={(e) => { e.stopPropagation(); onDelete(note.id); }}>X</button>
         </div>
       ))}
